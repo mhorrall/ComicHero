@@ -4,19 +4,18 @@ import {AvForm, AvField} from 'availity-reactstrap-validation';
 import {Button, Card, CardBody, CardTitle} from 'reactstrap';
 
 export default function ComicDetail() {
-    const apiUrl = `api/comics/`
+    const apiUrl = `api/comic/`
 
     const addComic = async(values) => {
-        const response = await Axios
-            .axios
+        await Axios
             .post(apiUrl, {
-                "title": values.title,
-                "issueNumber": values.issueNumber,
-                "series": values.series,
-                "description": values.description,
-                "publisher": values.publisher,
-                "year": values.year
-            })
+            "title": values.title,
+            "issueNumber": values.issueNumber,
+            "series": values.series,
+            "description": values.description,
+            "publisher": values.publisher,
+            "year": values.year
+        })
             .then((response) => {
                 console.log(response);
             }, (error) => {
