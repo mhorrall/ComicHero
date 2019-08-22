@@ -15,14 +15,14 @@ export default function MyComics() {
   const [detailOperation, setDetailOperation] = useState("");
 
   const searchComicsList = async (title = "", issueNumber = 0) => {
-    let apiUrl = `api/comic`;
+    let apiUrl = `api/comic?`;
 
     if (title !== "") {
-      apiUrl = `${apiUrl}?title=${title}`;
+      apiUrl = `${apiUrl}title=${title}`;
     }
 
     if (issueNumber > 0) {
-      apiUrl = `${apiUrl}?title=${title}&issueNumber=${issueNumber}`;
+      apiUrl = `${apiUrl}&issueNumber=${issueNumber}`;
     }
 
     console.log(apiUrl);

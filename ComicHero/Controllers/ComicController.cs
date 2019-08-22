@@ -31,7 +31,7 @@ namespace ComicHero.Web.Controllers
         }
         // GET: api/Comic
         [HttpGet("")]
-        public async Task<IActionResult> Get([FromQuery(Name = "title")] string title, [FromQuery(Name = "issueNumber")] int issueNumber)
+        public async Task<IActionResult> Get([FromQuery] string title, [FromQuery] int issueNumber)
         {
             var comics = await _repository.LisAsync<Comic>();
 
@@ -45,17 +45,6 @@ namespace ComicHero.Web.Controllers
 
             return Ok(result);
         }
-
-        // GET: api/Comic
-        //[HttpGet]
-        //public async Task<IActionResult> Get()
-        //{
-        //    var comics = await _repository.LisAsync<Comic>();
-
-        //    var result = _mapper.Map<List<Comic>, List<ComicDto>>(comics);
-
-        //    return Ok(result);
-        //}
 
 
         // GET: api/Comic/Image/5
@@ -103,20 +92,7 @@ namespace ComicHero.Web.Controllers
             _repository.Update(updateComic);
             return Ok();
         }
-
-        // DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> Delete(int id)
-        //{   
-        //    var success = await _repository.DeleteByIdAsync<Comic>(id);
-        //    if (success)
-        //    {
-        //        return Ok();
-        //    }
-
-        //    return NoContent();
-        //}
-
+        
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
