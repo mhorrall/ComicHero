@@ -31,7 +31,7 @@ export default function ComicSearch(props) {
         <div>
             <Card>
                 <CardBody>
-                    <CardTitle>Comic Search</CardTitle>
+                    <CardTitle>Search</CardTitle>
 
                     <InputGroup>
                         <InputGroupAddon addonType="prepend">Title:</InputGroupAddon>
