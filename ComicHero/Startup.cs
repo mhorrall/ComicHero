@@ -72,6 +72,7 @@ namespace ComicHero.Web
                 configuration.RootPath = "ClientApp/build";
             });
 
+            // Autofac
             return BuildDependencyInjectionProvider(services);
         }
 
