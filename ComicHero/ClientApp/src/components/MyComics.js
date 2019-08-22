@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ListGroup, ListGroupItem, Button, Collapse } from "reactstrap";
-import Image from "react-bootstrap/Image";
+import { Button, Collapse } from "reactstrap";
+// import Image from "react-bootstrap/Image";
 import ComicSearch from "./ComicSearch";
 import ComicDetail from "./ComicDetail";
 import ComicList from "./ComicList";
@@ -156,7 +156,6 @@ export default function MyComics() {
   };
   const onComicDelete = () => {
     deleteComic(selectedComic);
-    //searchComicsList();
   };
 
   const onItemClick = id => {
